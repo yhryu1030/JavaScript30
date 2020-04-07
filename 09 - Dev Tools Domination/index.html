@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+  <style>
+      html, body {
+          margin: 0;
+          text-align: center;
+          height: 100%;
+          overflow: hidden;
+          background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+      }
+
+      textarea {
+          max-width: 100%;
+          border-radius: 10px;
+          border: none;
+          width: 50%;
+          height: 50%;
+      }
+  </style>
+  <h1>Console Tricks!</h1>
+  <h2>Check the console!</h2>
+  <p onClick="makeGreen()">I turn big and green</p>
+  <textarea disabled>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'Hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+    console.log('hello');
+
+    // Interpolated
+    console.log('Hello i am a %s string!', '💪');
+    console.log(`Hello i am a ${'🥥'} string!`);
+
+    // Styled
+    console.log('%c I am some great text', 'font-size: 50px; background: red;');
+
+    // warning!
+    console.warn('OH NOOO! Warning!');
+
+    // Error :|
+    console.error('OH NOOO! Error!');
+
+    // Info
+    console.info('I was eating Haagen-Dazs Trio Layer when I wrote this');
+
+    // Testing
+    const p = document.querySelector('p');
+
+    console.assert(p.classList.contains('ouch'), 'That is wrong!');
+
+    // clearing
+    // console.clear();
+
+    // Viewing DOM Elements
+    console.log(p);
+    console.dir(p);
+
+    // Grouping together
+    dogs.forEach(dog => {
+        console.groupCollapsed(`${dog.name}`);
+        console.log(`This is ${dog.name}`);
+        console.log(`${dog.name} is ${dog.age} years old`);
+        console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+        console.groupEnd(`${dog.name}`);
+    });
+
+    // counting
+    console.count('Hi');
+    console.count('Hi');
+    console.count('Bye');
+    console.count('Hi');
+    console.count('Hi');
+    console.count('Bye');
+    console.count('Bye');
+    console.count('Hi');
+    console.count('Hi');
+    console.count('Bye');
+
+    // timing
+    console.time('fetching data');
+    fetch('https://api.github.com/users/yhryu1030')
+        .then(data => data.json())
+        .then(data => {
+            console.timeEnd('fetching data');
+            console.log(data);
+        });
+
+    // table
+    console.table(dogs);
+  </textarea>
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'Hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+    console.log('hello');
+
+    // Interpolated
+    console.log('Hello i am a %s string!', '💪');
+    console.log(`Hello i am a ${'🥥'} string!`);
+
+    // Styled
+    console.log('%c I am some great text', 'font-size: 50px; background: red;');
+
+    // warning!
+    console.warn('OH NOOO! Warning!');
+
+    // Error :|
+    console.error('OH NOOO! Error!');
+
+    // Info
+    console.info('I was eating Haagen-Dazs Trio Layer when I wrote this');
+
+    // Testing
+    const p = document.querySelector('p');
+
+    console.assert(p.classList.contains('ouch'), 'That is wrong!');
+
+    // clearing
+    // console.clear();
+
+    // Viewing DOM Elements
+    console.log(p);
+    console.dir(p);
+
+    // Grouping together
+    dogs.forEach(dog => {
+        console.groupCollapsed(`${dog.name}`);
+        console.log(`This is ${dog.name}`);
+        console.log(`${dog.name} is ${dog.age} years old`);
+        console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+        console.groupEnd(`${dog.name}`);
+    });
+
+    // counting
+    console.count('Hi');
+    console.count('Hi');
+    console.count('Bye');
+    console.count('Hi');
+    console.count('Hi');
+    console.count('Bye');
+    console.count('Bye');
+    console.count('Hi');
+    console.count('Hi');
+    console.count('Bye');
+
+    // timing
+    console.time('fetching data');
+    fetch('https://api.github.com/users/yhryu1030')
+        .then(data => data.json())
+        .then(data => {
+            console.timeEnd('fetching data');
+            console.log(data);
+        });
+
+    // table
+    console.table(dogs);
+
+  </script>
+</body>
+</html>
